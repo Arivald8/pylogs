@@ -1,6 +1,7 @@
 import traceback
 from datetime import datetime
-from modules.printer_model import Printer
+from ..printer_model import Printer
+
 
 prt = Printer()
 

@@ -1,8 +1,9 @@
-from printer_messages import messages
+from .printer_messages import messages, statements
 
 class Printer:
-    def __init__(self, messages=messages):
+    def __init__(self, messages=messages, statements=statements):
         self.messages = messages
+        self.statements = statements
 
     
     def message(self, msg):
@@ -63,3 +64,6 @@ class Printer:
         {args[0]}
         =============================================
         """)
+
+    def sql_statement(self, statement: str):
+        return statements[statement]

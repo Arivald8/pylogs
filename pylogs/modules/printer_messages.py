@@ -133,3 +133,28 @@ messages = {
     ============================================= 
     """
 }
+
+statements = {
+"create_users_table":
+"""
+create table users (
+    secret_key varchar not null,
+    secret_iv varchar not null,
+    username varchar not null unique,
+    pass_hash varchar not null
+);
+""",
+"create_events_table":
+"""
+create table event_logs (
+    date char(9) not null,
+    time char(8) not null,
+    event_title char(200) not null,
+    event_type char(3) not null,
+    event_user char(40),
+    event_staff char(40),
+    event_data char,
+    creator char 
+);
+""",
+}

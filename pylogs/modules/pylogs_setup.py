@@ -1,5 +1,9 @@
 from pathlib import Path
 
+from .processors.exception_processor import ExceptionProcessor
+
+exception_process = ExceptionProcessor
+
 
 class PylogsSetup:
     def __init__(
@@ -28,10 +32,12 @@ class PylogsSetup:
         try:
             open(f"{self.db_path}{self.db_name}", 'x').close()
             return True
-        except FileExistsError:
+        except FileExistsError as database_exists:
+            exception_process.log_error(exception=database_exists)
             return False
 
 
     def create_tables(self):
         pass
+        # db_process.create_tables()
 
