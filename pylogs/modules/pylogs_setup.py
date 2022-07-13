@@ -19,17 +19,19 @@ class PylogsSetup:
         self.user = user
         self.password = password
 
-    
+
     def check_db_exists(self) -> bool:
         return True if Path(f"{self.db_path}{self.db_name}").is_file() else False
 
 
     def create_db(self) -> bool:
         try:
-            open(f"pylogs/{self.db_name}", 'x').close()
+            open(f"{self.db_path}{self.db_name}", 'x').close()
             return True
-        except:
+        except FileExistsError:
             return False
 
 
-setup_process = PylogsSetup()
+    def create_tables(self):
+        pass
+
