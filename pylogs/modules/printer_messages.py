@@ -160,5 +160,9 @@ create table event_logs (
 "get_tables":
 """
 select name from sqlite_master where type='table';
+""",
+"create_user":
+"""
+insert into users values (?, ?, ?, ?)
 """
 }

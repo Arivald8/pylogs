@@ -51,5 +51,25 @@ class DbProcessor:
         """
         Returns --> ['table1', 'table2', ... ]
         """
-        return [table[0] for table in con_obj.cursor().execute(
-            self.prt.sql_statement(self.get_tables.__name__))]
+        try:
+            return [table[0] for table in con_obj.cursor().execute(
+                self.prt.sql_statement(self.get_tables.__name__))]
+        except Exception as fetch_tables_error:
+            self.exception_process.log_error(fetch_tables_error)
+
+
+    def create_user(self, con_obj, user_obj) -> bool:
+        try:
+            con_obj.cursor().execute(
+                self.prt.sql_statement(self.create_user.__name__),
+                (
+                    user_obj.secret_key,
+                    user_obj.secret_iv,
+                    user_obj.username,
+                    user_obj.pass_hash
+                )
+            )
+            return True
+        except Exception as create_user_error:
+            self.exception_process.log_error(create_user_error)
+            return False

@@ -6,6 +6,7 @@ from pylogs.modules.pylogs_setup import PylogsSetup
 from pylogs.modules.processors.db_processor import DbProcessor
 from pylogs.modules.processors.exception_processor import ExceptionProcessor
 from pylogs.modules.printer_model import Printer
+from pylogs.modules.user_model import User
 
 """
 Mocking the setup of processes for tests.
@@ -18,6 +19,13 @@ exception_process = ExceptionProcessor(prt=prt)
 setup_cfg = PylogsSetup(
     db_name="test_pylogs.db",
     exception_process=exception_process
+)
+
+user_obj = User(
+    username="test_username",
+    secret_key="test_key",
+    secret_iv="test_iv",
+    pass_hash="test_hash"
 )
 
 db_process = DbProcessor(
@@ -82,12 +90,24 @@ class TestDbProcessor(unittest.TestCase):
     def test_database_all_table_fetch(self):
         db_process.create_users_table(self.connection_obj)
         db_process.create_events_table(self.connection_obj)
-        
+
         self.assertListEqual(
             list1=['users', 'event_logs'],
             list2=db_process.get_tables(self.connection_obj)
         )
     
+
+    def test_database_create_user_method(self):
+        db_process.create_users_table(self.connection_obj)
+        db_process.create_events_table(self.connection_obj)
+
+        self.assertTrue(
+            db_process.create_user(
+                self.connection_obj,
+                user_obj
+            )
+        )
+
 
     def tearDown(self) -> None:
         os.remove(f"{setup_cfg.db_path}{setup_cfg.db_name}")
