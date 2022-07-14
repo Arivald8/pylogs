@@ -30,7 +30,7 @@ class PylogsSetup:
 
     def create_db(self) -> bool:
         try:
-            open(f"{self.db_path}{self.db_name}", 'x').close()
+            Path(f"{self.db_path}{self.db_name}").touch(exist_ok=True)
             return True
         except FileExistsError as database_exists:
             exception_process.log_error(exception=database_exists)
