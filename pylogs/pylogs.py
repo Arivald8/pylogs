@@ -18,7 +18,7 @@ db_process = DbProcessor(
 )
 
 def main() -> None:
-    db_process.get_tables(db_process.connect())
+    
 
 
 if __name__ == "__main__":

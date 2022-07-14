@@ -51,7 +51,7 @@ class DbProcessor:
 
     def get_tables(self, con_obj) -> list:
         """
-        Returns --> ['table1', 'table2', ... ]
+        Returns: ['table1', 'table2', ... ]
         """
         try:
             return [table[0] for table in con_obj.cursor().execute(
@@ -109,3 +109,45 @@ class DbProcessor:
         except Exception as add_event_error:
             self.exception_process.log_error(add_event_error)
             return False
+
+
+    def view_event(self, con_obj, creator, search_column, keyword) -> list:
+
+        def search_events(keyword) -> list:
+            events_found = []
+            for _ in range(7):
+                for event_tuple in event_log:
+                    if event_tuple[_] == keyword:
+                        events_found.append(event_tuple)
+            return events_found
+
+        """
+        event_log -> [
+            (
+                '00/00/00',
+                '00:00:00', 
+                'title', 
+                'tst', 
+                'event_user', 
+                'event_staff', 
+                'event_data', 
+                'creator'
+            ),
+            ...
+        ]
+        """         
+
+        event_log = con_obj.cursor().execute(
+            self.prt.sql_statement(self.view_event.__name__),
+            (creator,)).fetchall()
+
+        if search_column == "event_all":
+            return event_log
+
+        else:
+            return search_events(keyword)
+        
+
+
+
+        

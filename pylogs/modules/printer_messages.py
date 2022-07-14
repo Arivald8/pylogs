@@ -172,5 +172,9 @@ select username from users where username=?
 "add_event":
 """
 insert into event_logs values (?, ?, ?, ?, ?, ?, ?, ?)
+""",
+"view_event":
+"""
+select * from event_logs where creator=?
 """
 }

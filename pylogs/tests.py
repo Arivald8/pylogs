@@ -34,6 +34,58 @@ db_process = DbProcessor(
     prt=prt    
 )
 
+test_events = [
+    (
+        "00/00/00",
+        "00:00:00",
+        "test_title",
+        "tst",
+        "test_event_user",
+        "test_event_staff",
+        "test_event_data",
+        "test_creator"
+    ),
+    (
+        "00/00/01",
+        "00:00:00",
+        "test_title",
+        "tst",
+        "test_event_user",
+        "test_event_staff",
+        "test_event_data",
+        "test_creator"
+    ),
+    (
+        "00/00/02",
+        "00:00:00",
+        "test_title",
+        "tst",
+        "test_event_user",
+        "test_event_staff",
+        "test_event_data",
+        "test_creator"
+    ),
+    (
+        "00/00/03",
+        "00:00:00",
+        "test_title",
+        "tst",
+        "test_event_user",
+        "test_event_staff",
+        "test_event_data",
+        "test_creator"
+    ),
+    (
+        "00/00/04",
+        "00:00:00",
+        "test_title",
+        "tst",
+        "test_event_user",
+        "test_event_staff",
+        "test_event_data",
+        "test_creator"
+    )
+]
 
 class TestSetupDatabaseCreation(unittest.TestCase):
     def setUp(self) -> None:
@@ -136,6 +188,96 @@ class TestDbProcessor(unittest.TestCase):
                     "test_creator"
                 ]
             )
+        )
+
+
+    def test_database_view_event_method(self):
+        db_process.create_events_table(self.connection_obj)
+
+        for _ in range(5):
+            db_process.add_event(
+                    db_process.connect(),
+                    [
+                        f"00/00/0{_}",
+                        "00:00:00",
+                        "test_title",
+                        "tst",
+                        "test_event_user",
+                        "test_event_staff",
+                        "test_event_data",
+                        "test_creator"
+                    ]
+                )
+
+        all_events = db_process.view_event(
+            self.connection_obj,
+            "test_creator",
+            "event_all",
+            ""
+        )
+
+        date_events = db_process.view_event(
+            self.connection_obj,
+            "test_creator",
+            "date",
+            "00/00/02"
+        )
+
+        title_events = db_process.view_event(
+            self.connection_obj,
+            "test_creator",
+            "event_title",
+            "test_title"
+        )
+
+        user_events = db_process.view_event(
+            self.connection_obj,
+            "test_creator",
+            "event_user",
+            "test_event_user"
+        )
+
+        staff_events = db_process.view_event(
+            self.connection_obj,
+            "test_creator",
+            "event_staff",
+            "test_event_staff"
+        )
+
+        self.assertCountEqual(
+            all_events,
+            test_events
+        )
+
+        self.assertListEqual(
+            date_events,
+            [
+                (
+                    "00/00/02",
+                    "00:00:00",
+                    "test_title",
+                    "tst",
+                    "test_event_user",
+                    "test_event_staff",
+                    "test_event_data",
+                    "test_creator"
+                )
+            ]
+        )
+
+        self.assertListEqual(
+            title_events,
+            test_events,
+        )
+
+        self.assertListEqual(
+            user_events,
+            test_events,
+        )
+
+        self.assertListEqual(
+            staff_events,
+            test_events,
         )
 
 
