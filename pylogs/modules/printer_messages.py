@@ -157,4 +157,8 @@ create table event_logs (
     creator char 
 );
 """,
+"get_tables":
+"""
+select name from sqlite_master where type='table';
+"""
 }

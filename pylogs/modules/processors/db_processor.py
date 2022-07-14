@@ -51,7 +51,5 @@ class DbProcessor:
         """
         Returns --> ['table1', 'table2', ... ]
         """
-        tables = [table[0] for table in con_obj.cursor().execute(
-            "SELECT name FROM sqlite_master WHERE type='table';"
-        )]
-        return tables
+        return [table[0] for table in con_obj.cursor().execute(
+            self.prt.sql_statement(self.get_tables.__name__))]
