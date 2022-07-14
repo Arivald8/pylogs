@@ -638,3 +638,25 @@ attempt to write a readonly database
   File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
     traceback.extract_stack().format()
 ]
+
+[14/07/2022, 11:24:24] - 
+'NoneType' object has no attribute 'db_path'
+[  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 20, in <module>
+    main()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 16, in main
+    db_process.get_tables(db_process.connect())
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 25, in connect
+    self.exception_process.log_error(db_connect_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 11:26:05] - 
+'NoneType' object has no attribute 'db_path'
+[  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 13, in <module>
+    con_obj = db_process.connect()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 25, in connect
+    self.exception_process.log_error(db_connect_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]

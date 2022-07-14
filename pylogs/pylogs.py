@@ -7,13 +7,18 @@ from modules.processors.exception_processor import ExceptionProcessor
 
 user = User()
 prt = Printer()
+
 exception_process = ExceptionProcessor(prt=prt)
 setup_cfg = PylogsSetup(exception_process=exception_process)
-db_process = DbProcessor(exception_process=exception_process, prt=prt)
 
+db_process = DbProcessor(
+    setup_cfg=setup_cfg,
+    exception_process=exception_process,
+    prt=prt
+)
 
 def main() -> None:
-    pass
+    db_process.get_tables(db_process.connect())
 
 
 if __name__ == "__main__":

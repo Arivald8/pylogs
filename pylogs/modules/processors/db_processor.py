@@ -45,3 +45,13 @@ class DbProcessor:
         except Exception as create_events_table_error:
             self.exception_process.log_error(create_events_table_error)
             return False
+
+
+    def get_tables(self, con_obj) -> list:
+        """
+        Returns --> ['table1', 'table2', ... ]
+        """
+        tables = [table[0] for table in con_obj.cursor().execute(
+            "SELECT name FROM sqlite_master WHERE type='table';"
+        )]
+        return tables

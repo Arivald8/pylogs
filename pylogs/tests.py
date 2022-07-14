@@ -4,10 +4,27 @@ import sqlite3
 
 from pylogs.modules.pylogs_setup import PylogsSetup
 from pylogs.modules.processors.db_processor import DbProcessor
+from pylogs.modules.processors.exception_processor import ExceptionProcessor
+from pylogs.modules.printer_model import Printer
 
-setup_cfg = PylogsSetup(db_name="test_pylogs.db")
-db_process = DbProcessor(setup_cfg=setup_cfg)
+"""
+Mocking the setup of processes for tests.
+Do not change the order of instantiation.
+"""
 
+prt = Printer()
+exception_process = ExceptionProcessor(prt=prt)
+
+setup_cfg = PylogsSetup(
+    db_name="test_pylogs.db",
+    exception_process=exception_process
+)
+
+db_process = DbProcessor(
+    setup_cfg=setup_cfg,
+    exception_process=exception_process,
+    prt=prt    
+)
 
 
 class TestSetupDatabaseCreation(unittest.TestCase):
@@ -60,6 +77,16 @@ class TestDbProcessor(unittest.TestCase):
 
     def test_database_creating_event_table(self):
         self.assertTrue(db_process.create_events_table(self.connection_obj))
+
+
+    def test_database_all_table_fetch(self):
+        db_process.create_users_table(self.connection_obj)
+        db_process.create_events_table(self.connection_obj)
+        
+        self.assertListEqual(
+            list1=['users', 'event_logs'],
+            list2=db_process.get_tables(self.connection_obj)
+        )
     
 
     def tearDown(self) -> None:
