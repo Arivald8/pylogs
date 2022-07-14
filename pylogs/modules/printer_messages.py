@@ -169,4 +169,8 @@ insert into users values (?, ?, ?, ?)
 """
 select username from users where username=?
 """,
+"add_event":
+"""
+insert into event_logs values (?, ?, ?, ?, ?, ?, ?, ?)
+"""
 }

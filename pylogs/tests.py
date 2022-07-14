@@ -119,6 +119,26 @@ class TestDbProcessor(unittest.TestCase):
         )
 
 
+    def test_database_add_event_method(self):
+        db_process.create_events_table(self.connection_obj)
+
+        self.assertTrue(
+            db_process.add_event(
+                db_process.connect(),
+                [
+                    "00/00/00",
+                    "00:00:00",
+                    "test_title",
+                    "tst",
+                    "test_event_user",
+                    "test_event_staff",
+                    "test_event_data",
+                    "test_creator"
+                ]
+            )
+        )
+
+
     def tearDown(self) -> None:
         os.remove(f"{setup_cfg.db_path}{setup_cfg.db_name}")
         self.connection_obj = None

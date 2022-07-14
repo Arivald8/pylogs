@@ -30,6 +30,7 @@ class DbProcessor:
             con_obj.cursor().execute(
                 self.prt.sql_statement(self.create_users_table.__name__)
             )
+            con_obj.commit()
             return True
         except Exception as create_users_table_error:
             self.exception_process.log_error(create_users_table_error)
@@ -41,6 +42,7 @@ class DbProcessor:
             con_obj.cursor().execute(
                 self.prt.sql_statement(self.create_events_table.__name__)
             )
+            con_obj.commit()
             return True
         except Exception as create_events_table_error:
             self.exception_process.log_error(create_events_table_error)
@@ -69,18 +71,41 @@ class DbProcessor:
                     user_obj.pass_hash
                 )
             )
+            con_obj.commit()
             return True
         except Exception as create_user_error:
             self.exception_process.log_error(create_user_error)
             return False
 
 
-    def check_if_user_exists(self, con_obj, username):
+    def check_if_user_exists(self, con_obj, username) -> bool:
         try:
             return False if con_obj.cursor().execute(
                 self.prt.sql_statement(
-                    self.check_if_user_exists.__name__
-                ), (username,)
+                    self.check_if_user_exists.__name__), 
+                    (username,)
             ).fetchone() is None else True
         except Exception as user_check_error:
             self.exception_process.log_error(user_check_error)
+
+
+    def add_event(self, con_obj, event_log: list) -> bool:
+        try:
+            con_obj.cursor().execute(
+                self.prt.sql_statement(self.add_event.__name__),
+                (
+                    str(event_log[0]),
+                    str(event_log[1]),
+                    str(event_log[2]),
+                    str(event_log[3]),
+                    str(event_log[4]),
+                    str(event_log[5]),
+                    str(event_log[6]),
+                    str(event_log[7])
+                )
+            )
+            con_obj.commit()
+            return True
+        except Exception as add_event_error:
+            self.exception_process.log_error(add_event_error)
+            return False
