@@ -1,11 +1,18 @@
 import traceback
 from datetime import datetime
-from ..printer_model import Printer
 
-
-prt = Printer()
 
 class ExceptionProcessor:
+    """
+    Dunder init expects to receive a printer object
+    so that it can output exceptions to the user.
+
+    prt: pylogs.modules.printer_model.Printer
+    """
+    def __init__(self, prt):
+        self.prt = prt
+
+
     def log_error(self, exception, silent=False) -> None:
         try:
             if not silent:
@@ -17,9 +24,9 @@ class ExceptionProcessor:
                             traceback.extract_stack().format()
                         )}]\n"""
                     )
-                prt.message("log_exception")
+                self.prt.message("log_exception")
         except Exception as double_exception:
-            prt.double_exceptions(exception, double_exception)
+            self.prt.double_exceptions(exception, double_exception)
 
 
     def format_traceback(self, traceback_stack: list) -> str:

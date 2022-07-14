@@ -54,12 +54,10 @@ class TestDbProcessor(unittest.TestCase):
         self.assertIsInstance(db_process.connect(), sqlite3.Connection)
 
 
-    
     def test_database_creating_users_table(self):
         self.assertTrue(db_process.create_users_table(self.connection_obj))
     
 
-    
     def test_database_creating_event_table(self):
         self.assertTrue(db_process.create_events_table(self.connection_obj))
     

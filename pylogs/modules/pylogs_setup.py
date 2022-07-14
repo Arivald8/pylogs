@@ -1,8 +1,5 @@
+from logging import exception
 from pathlib import Path
-
-from .processors.exception_processor import ExceptionProcessor
-
-exception_process = ExceptionProcessor
 
 
 class PylogsSetup:
@@ -14,6 +11,7 @@ class PylogsSetup:
         db_events_table="events",
         user="user",
         password="",
+        exception_process=None,
 
     ):
         self.db_name = db_name
@@ -22,6 +20,7 @@ class PylogsSetup:
         self.db_events_table = db_events_table
         self.user = user
         self.password = password
+        self.exception_process = exception_process
 
 
     def check_db_exists(self) -> bool:
@@ -33,7 +32,7 @@ class PylogsSetup:
             Path(f"{self.db_path}{self.db_name}").touch(exist_ok=True)
             return True
         except FileExistsError as database_exists:
-            exception_process.log_error(exception=database_exists)
+            self.exception_process.log_error(exception=database_exists)
             return False
 
 
