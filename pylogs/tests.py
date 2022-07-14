@@ -102,9 +102,19 @@ class TestDbProcessor(unittest.TestCase):
         db_process.create_events_table(self.connection_obj)
 
         self.assertTrue(
-            db_process.create_user(
-                self.connection_obj,
-                user_obj
+            db_process.create_user(self.connection_obj, user_obj)
+        )
+
+
+    def test_database_check_if_user_exists_method(self):
+        db_process.create_users_table(self.connection_obj)
+        db_process.create_events_table(self.connection_obj)
+        db_process.create_user(self.connection_obj, user_obj)
+
+        self.assertTrue(
+            db_process.check_if_user_exists(
+                self.connection_obj, 
+                user_obj.username
             )
         )
 

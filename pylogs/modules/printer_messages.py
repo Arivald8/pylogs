@@ -164,5 +164,9 @@ select name from sqlite_master where type='table';
 "create_user":
 """
 insert into users values (?, ?, ?, ?)
+""",
+"check_if_user_exists":
 """
+select username from users where username=?
+""",
 }

@@ -820,3 +820,83 @@ Incorrect number of bindings supplied. The current statement uses 0, and there a
   File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
     traceback.extract_stack().format()
 ]
+
+[14/07/2022, 14:09:17] - 
+Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 115, in test_database_check_if_user_exists_method
+    db_process.check_if_user_exists(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 86, in check_if_user_exists
+    self.exception_process.log_error(user_check_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 14:11:06] - 
+Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 117, in test_database_check_if_user_exists_method
+    db_process.check_if_user_exists(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 86, in check_if_user_exists
+    self.exception_process.log_error(user_check_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]

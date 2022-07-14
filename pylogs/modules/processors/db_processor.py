@@ -73,3 +73,14 @@ class DbProcessor:
         except Exception as create_user_error:
             self.exception_process.log_error(create_user_error)
             return False
+
+
+    def check_if_user_exists(self, con_obj, username):
+        try:
+            return False if con_obj.cursor().execute(
+                self.prt.sql_statement(
+                    self.check_if_user_exists.__name__
+                ), (username,)
+            ).fetchone() is None else True
+        except Exception as user_check_error:
+            self.exception_process.log_error(user_check_error)
