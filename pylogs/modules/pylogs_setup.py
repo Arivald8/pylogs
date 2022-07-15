@@ -1,3 +1,4 @@
+from logging import exception
 from pathlib import Path
 
 
@@ -10,6 +11,7 @@ class PylogsSetup:
         db_events_table="events",
         user="user",
         password="",
+        exception_process=None,
 
     ):
         self.db_name = db_name
@@ -18,18 +20,23 @@ class PylogsSetup:
         self.db_events_table = db_events_table
         self.user = user
         self.password = password
+        self.exception_process = exception_process
 
-    
+
     def check_db_exists(self) -> bool:
         return True if Path(f"{self.db_path}{self.db_name}").is_file() else False
 
 
     def create_db(self) -> bool:
         try:
-            open(f"pylogs/{self.db_name}", 'x').close()
+            Path(f"{self.db_path}{self.db_name}").touch(exist_ok=True)
             return True
-        except:
+        except FileExistsError as database_exists:
+            self.exception_process.log_error(exception=database_exists)
             return False
 
 
-setup_process = PylogsSetup()
+    def create_tables(self):
+        pass
+        # db_process.create_tables()
+

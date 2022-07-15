@@ -1,0 +1,902 @@
+
+[13/07/2022, 16:00:44] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 49, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[13/07/2022, 16:04:00] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[13/07/2022, 16:04:00] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 57, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[13/07/2022, 16:18:48] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 55, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[13/07/2022, 16:18:48] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:17:24] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 55, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:17:24] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:36:06] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 55, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:36:06] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:36:31] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 55, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:36:31] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:37:00] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 55, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:37:00] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 56, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 08:38:33] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/tests.py", line 57, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 09:13:24] - 
+table event_logs already exists
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 56, in test_database_creating_users_table
+    print(db_process.create_events_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 46, in create_events_table
+    exception_process.log_error(create_events_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 09:13:24] - 
+attempt to write a readonly database
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 57, in test_database_creating_users_table
+    self.assertTrue(db_process.create_users_table(connection_obj))
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 35, in create_users_table
+    exception_process.log_error(create_users_table_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 17, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 11:24:24] - 
+'NoneType' object has no attribute 'db_path'
+[  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 20, in <module>
+    main()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 16, in main
+    db_process.get_tables(db_process.connect())
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 25, in connect
+    self.exception_process.log_error(db_connect_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 11:26:05] - 
+'NoneType' object has no attribute 'db_path'
+[  File "/home/computerhome/Documents/dev/pylogs/pylogs/pylogs.py", line 13, in <module>
+    con_obj = db_process.connect()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 25, in connect
+    self.exception_process.log_error(db_connect_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 13:39:28] - 
+'builtin_function_or_method' object has no attribute 'execute'
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 105, in test_database_create_user_method
+    db_process.create_user(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 74, in create_user
+    self.exception_process.log_error(create_user_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 13:41:53] - 
+'builtin_function_or_method' object has no attribute 'execute'
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 105, in test_database_create_user_method
+    db_process.create_user(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 76, in create_user
+    self.exception_process.log_error(create_user_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 13:42:23] - 
+Incorrect number of bindings supplied. The current statement uses 0, and there are 4 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 105, in test_database_create_user_method
+    db_process.create_user(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 76, in create_user
+    self.exception_process.log_error(create_user_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 13:45:16] - 
+Incorrect number of bindings supplied. The current statement uses 0, and there are 4 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 105, in test_database_create_user_method
+    db_process.create_user(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 75, in create_user
+    self.exception_process.log_error(create_user_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 14:09:17] - 
+Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 115, in test_database_check_if_user_exists_method
+    db_process.check_if_user_exists(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 86, in check_if_user_exists
+    self.exception_process.log_error(user_check_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
+
+[14/07/2022, 14:11:06] - 
+Incorrect number of bindings supplied. The current statement uses 1, and there are 13 supplied.
+[  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.8/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/usr/lib/python3.8/unittest/main.py", line 101, in __init__
+    self.runTests()
+  File "/usr/lib/python3.8/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+  File "/usr/lib/python3.8/unittest/runner.py", line 176, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/suite.py", line 122, in run
+    test(result)
+  File "/usr/lib/python3.8/unittest/case.py", line 736, in __call__
+    return self.run(*args, **kwds)
+  File "/usr/lib/python3.8/unittest/case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "/usr/lib/python3.8/unittest/case.py", line 633, in _callTestMethod
+    method()
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/tests.py", line 117, in test_database_check_if_user_exists_method
+    db_process.check_if_user_exists(
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/db_processor.py", line 86, in check_if_user_exists
+    self.exception_process.log_error(user_check_error)
+  File "/home/computerhome/Documents/dev/pylogs/pylogs/modules/processors/exception_processor.py", line 24, in log_error
+    traceback.extract_stack().format()
+]
