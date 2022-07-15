@@ -15,9 +15,9 @@ class User:
 
     def __call__(self):
         return (
-            self.username,
             self.secret_key,
             self.secret_iv,
+            self.username,
             self.pass_hash
         )
 
