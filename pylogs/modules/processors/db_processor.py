@@ -150,11 +150,10 @@ class DbProcessor:
             ),
             ...
         ]
-        """         
+        """
         event_log = con_obj.cursor().execute(
             self.prt.sql_statement(self.fetch_event.__name__),
-            (creator,)).fetchall()
-
+            (creator,)).fetchall() 
 
         if search_column == "event_all":
             return event_log
