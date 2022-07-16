@@ -1,9 +1,11 @@
+from ctypes import sizeof
 import os
 import unittest
 import sqlite3
 
 from pylogs.modules.pylogs_setup import PylogsSetup
 from pylogs.modules.processors.db_processor import DbProcessor
+from pylogs.modules.processors.auth_processor import AuthProcessor
 from pylogs.modules.processors.exception_processor import ExceptionProcessor
 from pylogs.modules.printer_model import Printer
 from pylogs.modules.user_model import User
@@ -32,6 +34,12 @@ db_process = DbProcessor(
     setup_cfg=setup_cfg,
     exception_process=exception_process,
     prt=prt    
+)
+
+auth_process = AuthProcessor(
+    username=setup_cfg.user,
+    password=setup_cfg.password,
+    user=user_obj
 )
 
 test_events = [
@@ -271,3 +279,14 @@ class TestDbProcessor(unittest.TestCase):
         os.remove(f"{setup_cfg.db_path}{setup_cfg.db_name}")
         self.connection_obj = None
         return super().tearDown()
+
+
+class TestAuthProcessor(unittest.TestCase):
+    def setUp(self) -> None:
+        return super().setUp()
+
+
+    def test_generate_secret_key(self):
+        secret = auth_process.generate_secret(key=True)
+        self.assertIsInstance(secret, bytes)
+        self.assertEqual(len(secret), 32)
