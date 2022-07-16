@@ -1,6 +1,10 @@
 from hashlib import blake2b
 import os
 
+from cryptography.hazmat.primitives.ciphers import (
+    Cipher, algorithms, modes
+)
+
 class AuthProcessor:
     def __init__(self, username=None, password=None, user=None):
         self.username = username
@@ -28,3 +32,10 @@ class AuthProcessor:
             key=f'{secret_key}'.encode()
         ).hexdigest()
     
+
+    def encrypt_log(self, secret_key, secret_iv, event_log):
+        cipher = Cipher(algorithms.AES(secret_key), modes.CTR(secret_iv))
+        encryptor = cipher.encryptor()
+        encrypted = [encryptor.update(f"{_}".encode())for _ in event_log]
+        encryptor.finalize()
+        return encrypted
