@@ -290,3 +290,11 @@ class TestAuthProcessor(unittest.TestCase):
         secret = auth_process.generate_secret(key=True)
         self.assertIsInstance(secret, bytes)
         self.assertEqual(len(secret), 32)
+
+
+    def test_generate_secret_iv(self):
+        secret = auth_process.generate_secret(iv=True)
+        self.assertIsInstance(secret, bytes)
+        self.assertEqual(len(secret), 16)
+
+        
