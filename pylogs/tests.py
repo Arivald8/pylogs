@@ -305,5 +305,56 @@ class TestAuthProcessor(unittest.TestCase):
         )
         self.assertIsInstance(hexdigest, str)
         self.assertEqual(len(hexdigest),  32)
+
+
+    def test_log_encryption(self):
+        secret_key = auth_process.generate_secret(key=True)
+        secret_iv = auth_process.generate_secret(iv=True)
+
+        encrypted_log = auth_process.encrypt_log(
+            secret_key,
+            secret_iv,
+            [
+                "00/00/00",
+                "00:00:00",
+                "test_title",
+                "tst",
+                "test_event_user",
+                "test_event_staff",
+                "test_event_data",
+                user_obj.username
+            ]
+        )
+        self.assertIsInstance(encrypted_log, list)
+        self.assertEqual(len(encrypted_log), 8)
+        for _ in encrypted_log:
+            self.assertIsInstance(_, bytes)
         
-        
+
+    def test_log_decryption(self):
+        secret_key = auth_process.generate_secret(key=True)
+        secret_iv = auth_process.generate_secret(iv=True)
+
+        encrypted_log = auth_process.encrypt_log(
+            secret_key,
+            secret_iv,
+            [
+                "00/00/00",
+                "00:00:00",
+                "test_title",
+                "tst",
+                "test_event_user",
+                "test_event_staff",
+                "test_event_data",
+                user_obj.username
+            ]
+        )
+
+        decrypted_log = auth_process.decrypt_log(
+            secret_key,
+            secret_iv,
+            encrypted_log
+        )
+
+        for _ in decrypted_log:
+            self.assertIsInstance(_, str)
