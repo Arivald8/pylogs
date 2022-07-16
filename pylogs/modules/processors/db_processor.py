@@ -127,7 +127,7 @@ class DbProcessor:
             return False
 
 
-    def view_event(self, con_obj, creator, search_column, keyword) -> list:
+    def fetch_event(self, con_obj, creator, search_column, keyword) -> list:
         def search_events(keyword) -> list:
             events_found = []
             for _ in range(7):
@@ -152,12 +152,12 @@ class DbProcessor:
         ]
         """         
         event_log = con_obj.cursor().execute(
-            self.prt.sql_statement(self.view_event.__name__),
+            self.prt.sql_statement(self.fetch_event.__name__),
             (creator,)).fetchall()
+
 
         if search_column == "event_all":
             return event_log
-
         else:
             return search_events(keyword)
         

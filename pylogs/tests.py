@@ -214,35 +214,35 @@ class TestDbProcessor(unittest.TestCase):
                     ]
                 )
 
-        all_events = db_process.view_event(
+        all_events = db_process.fetch_event(
             self.connection_obj,
             "test_creator",
             "event_all",
             ""
         )
 
-        date_events = db_process.view_event(
+        date_events = db_process.fetch_event(
             self.connection_obj,
             "test_creator",
             "date",
             "00/00/02"
         )
 
-        title_events = db_process.view_event(
+        title_events = db_process.fetch_event(
             self.connection_obj,
             "test_creator",
             "event_title",
             "test_title"
         )
 
-        user_events = db_process.view_event(
+        user_events = db_process.fetch_event(
             self.connection_obj,
             "test_creator",
             "event_user",
             "test_event_user"
         )
 
-        staff_events = db_process.view_event(
+        staff_events = db_process.fetch_event(
             self.connection_obj,
             "test_creator",
             "event_staff",
