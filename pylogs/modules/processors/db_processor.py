@@ -89,6 +89,22 @@ class DbProcessor:
             self.exception_process.log_error(user_check_error)
 
 
+    def get_user_object(self, con_obj, username=None) -> tuple:
+        """
+        Returns:
+            (<secret_key>, <secret_iv>, <username>, <pass_hash>)
+        """
+        try:
+            user_object = con_obj.cursor().execute(
+                self.prt.sql_statement(
+                    self.get_user_object.__name__),
+                    (username,)).fetchone()
+            return user_object
+            
+        except Exception as get_user_obj_error:
+            self.exception_process.log_error(get_user_obj_error)
+            
+
     def add_event(self, con_obj, event_log: list) -> bool:
         try:
             con_obj.cursor().execute(
@@ -112,7 +128,6 @@ class DbProcessor:
 
 
     def view_event(self, con_obj, creator, search_column, keyword) -> list:
-
         def search_events(keyword) -> list:
             events_found = []
             for _ in range(7):
@@ -136,7 +151,6 @@ class DbProcessor:
             ...
         ]
         """         
-
         event_log = con_obj.cursor().execute(
             self.prt.sql_statement(self.view_event.__name__),
             (creator,)).fetchall()

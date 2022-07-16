@@ -176,5 +176,9 @@ insert into event_logs values (?, ?, ?, ?, ?, ?, ?, ?)
 "view_event":
 """
 select * from event_logs where creator=?
+""",
+"get_user_object":
+"""
+select secret_key, secret_iv, username, pass_hash from users where username=?
 """
 }

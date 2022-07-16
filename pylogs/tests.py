@@ -102,22 +102,6 @@ class TestSetupDatabaseCreation(unittest.TestCase):
             os.remove(f"{setup_cfg.db_path}{setup_cfg.db_name}")
         return super().tearDown()
 
-class TestSetupTableCreation(unittest.TestCase):
-    def setUp(self) -> None:
-        if not setup_cfg.check_db_exists():
-            setup_cfg.create_db()
-            self.connection_obj = db_process.connect()
-        return super().setUp()
-    
-    def test_setup_database_table_creation(self):
-        pass
-
-
-    def tearDown(self) -> None:
-        os.remove(f"{setup_cfg.db_path}{setup_cfg.db_name}")
-        self.connection_obj = None
-        return super().tearDown()
-
 
 class TestDbProcessor(unittest.TestCase):
     def setUp(self) -> None:
@@ -168,6 +152,19 @@ class TestDbProcessor(unittest.TestCase):
                 self.connection_obj, 
                 user_obj.username
             )
+        )
+
+
+    def test_database_get_user_object(self):
+        db_process.create_users_table(self.connection_obj)
+        db_process.create_events_table(self.connection_obj)
+        db_process.create_user(self.connection_obj, user_obj)
+        user_db_obj = db_process.get_user_object(
+            self.connection_obj, user_obj.username)
+
+        self.assertTupleEqual(
+            user_obj(),
+            user_db_obj
         )
 
 
@@ -251,18 +248,7 @@ class TestDbProcessor(unittest.TestCase):
 
         self.assertListEqual(
             date_events,
-            [
-                (
-                    "00/00/02",
-                    "00:00:00",
-                    "test_title",
-                    "tst",
-                    "test_event_user",
-                    "test_event_staff",
-                    "test_event_data",
-                    "test_creator"
-                )
-            ]
+            [test_events[2]]
         )
 
         self.assertListEqual(
