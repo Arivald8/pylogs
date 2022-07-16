@@ -297,4 +297,13 @@ class TestAuthProcessor(unittest.TestCase):
         self.assertIsInstance(secret, bytes)
         self.assertEqual(len(secret), 16)
 
+
+    def test_hexdigest_output(self):
+        hexdigest = auth_process.hexdigestizer(
+            data="test_data",
+            secret_key=user_obj.secret_key
+        )
+        self.assertIsInstance(hexdigest, str)
+        self.assertEqual(len(hexdigest),  32)
+        
         

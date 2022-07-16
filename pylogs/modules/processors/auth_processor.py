@@ -1,3 +1,4 @@
+from hashlib import blake2b
 import os
 
 class AuthProcessor:
@@ -19,4 +20,11 @@ class AuthProcessor:
             # Unknown cause of malfunction
             return None
 
+    
+    def hexdigestizer(self, data, secret_key) -> str:
+        return blake2b(
+            f'{data}'.encode(),
+            digest_size=16,
+            key=f'{secret_key}'.encode()
+        ).hexdigest()
     
