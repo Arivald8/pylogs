@@ -36,6 +36,14 @@ class AuthProcessor:
     def encrypt_log(self, secret_key, secret_iv, event_log):
         cipher = Cipher(algorithms.AES(secret_key), modes.CTR(secret_iv))
         encryptor = cipher.encryptor()
-        encrypted = [encryptor.update(f"{_}".encode())for _ in event_log]
+        encrypted = [encryptor.update(f"{_}".encode()) for _ in event_log]
         encryptor.finalize()
         return encrypted
+
+
+    def decrypt_log(self, secret_key, secret_iv, event_log):
+        cipher = Cipher(algorithms.AES(secret_key), modes.CTR(secret_iv))
+        decryptor = cipher.decryptor()
+        decrypted = [decryptor.update(_) for _ in event_log]
+        decryptor.finalize()
+        return [str(_) for _ in decrypted]
