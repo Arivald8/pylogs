@@ -181,7 +181,7 @@ class TestDbProcessor(unittest.TestCase):
 
         self.assertTrue(
             db_process.add_event(
-                db_process.connect(),
+                self.connection_obj,
                 [
                     "00/00/00",
                     "00:00:00",
@@ -196,12 +196,12 @@ class TestDbProcessor(unittest.TestCase):
         )
 
 
-    def test_database_view_event_method(self):
+    def test_database_fetch_event_method(self):
         db_process.create_events_table(self.connection_obj)
 
         for _ in range(5):
             db_process.add_event(
-                    db_process.connect(),
+                    self.connection_obj,
                     [
                         f"00/00/0{_}",
                         "00:00:00",
@@ -214,65 +214,20 @@ class TestDbProcessor(unittest.TestCase):
                     ]
                 )
 
-        all_events = db_process.view_event(
-            self.connection_obj,
-            "test_creator",
-            "event_all",
-            ""
-        )
+        all_events = db_process.fetch_event(self.connection_obj, "test_creator")
 
-        date_events = db_process.view_event(
-            self.connection_obj,
-            "test_creator",
-            "date",
-            "00/00/02"
-        )
-
-        title_events = db_process.view_event(
-            self.connection_obj,
-            "test_creator",
-            "event_title",
-            "test_title"
-        )
-
-        user_events = db_process.view_event(
-            self.connection_obj,
-            "test_creator",
-            "event_user",
-            "test_event_user"
-        )
-
-        staff_events = db_process.view_event(
-            self.connection_obj,
-            "test_creator",
-            "event_staff",
-            "test_event_staff"
-        )
-
-        self.assertCountEqual(
+        self.assertListEqual(
             all_events,
-            test_events
-        )
-
-        self.assertListEqual(
-            date_events,
-            [test_events[2]]
-        )
-
-        self.assertListEqual(
-            title_events,
             test_events,
         )
 
-        self.assertListEqual(
-            user_events,
-            test_events,
-        )
-
-        self.assertListEqual(
-            staff_events,
-            test_events,
-        )
+    
+    def test_database_search_events_method(self):
+        for _ in range(5):
+            self.assertTupleEqual(
+                db_process.search_events(test_events, f"00/00/0{_}"),
+                test_events[_]
+            )
 
 
     def tearDown(self) -> None:
