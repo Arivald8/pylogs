@@ -173,7 +173,7 @@ select username from users where username=?
 """
 insert into event_logs values (?, ?, ?, ?, ?, ?, ?, ?)
 """,
-"view_event":
+"fetch_event":
 """
 select * from event_logs where creator=?
 """,

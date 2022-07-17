@@ -127,15 +127,7 @@ class DbProcessor:
             return False
 
 
-    def fetch_event(self, con_obj, creator, search_column, keyword) -> list:
-        def search_events(keyword) -> list:
-            events_found = []
-            for _ in range(7):
-                for event_tuple in event_log:
-                    if event_tuple[_] == keyword:
-                        events_found.append(event_tuple)
-            return events_found
-
+    def fetch_event(self, con_obj, creator) -> list:
         """
         event_log -> [
             (
@@ -151,15 +143,24 @@ class DbProcessor:
             ...
         ]
         """
-        event_log = con_obj.cursor().execute(
-            self.prt.sql_statement(self.fetch_event.__name__),
-            (creator,)).fetchall() 
-
-        if search_column == "event_all":
+        try:
+            event_log = con_obj.cursor().execute(
+                self.prt.sql_statement(self.fetch_event.__name__),
+                (creator,)).fetchall()
             return event_log
-        else:
-            return search_events(keyword)
-        
+        except Exception as fetch_event_error:
+            self.exception_process.log_error(fetch_event_error)
+
+
+    def search_events(self, event_log, keyword) -> tuple:
+        """ Expects unencrypted event_log """
+        events_found = ()
+        for event_tuple in event_log:
+            for data_type in event_tuple:
+                    if keyword in data_type:
+                        events_found += event_tuple
+        return events_found
+
 
 
 
