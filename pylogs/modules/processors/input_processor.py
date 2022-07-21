@@ -1,5 +1,3 @@
-
-
 class InputProcessor:
     """
     Create a callable instance of an input process.

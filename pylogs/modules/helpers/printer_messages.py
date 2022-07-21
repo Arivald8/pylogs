@@ -56,6 +56,11 @@ messages = {
     Valid events:
     """,
 
+    "invalid_selection":
+    """
+    Invalid selection.
+    """
+
     "invalid_search_type":
     """
     Invalid search type.
@@ -91,6 +96,11 @@ messages = {
     "registration_success": """
     Registration successful, please sign in.
     """,
+
+    "username_exists":
+    """
+    Username already exists. Try again.
+    """
 
     "log_exception": """
     =============================================

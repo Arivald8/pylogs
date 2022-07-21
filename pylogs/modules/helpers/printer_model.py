@@ -65,5 +65,6 @@ class Printer:
         =============================================
         """)
 
+
     def sql_statement(self, statement: str):
         return statements[statement]

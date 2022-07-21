@@ -1,6 +1,6 @@
-from modules.pylogs_setup import PylogsSetup
-from modules.user_model import User
-from modules.printer_model import Printer
+from modules.helpers.pylogs_setup import PylogsSetup
+from modules.helpers.user_model import User
+from modules.helpers.printer_model import Printer
 
 from modules.processors.db_processor import DbProcessor
 from modules.processors.exception_processor import ExceptionProcessor

@@ -1,19 +1,17 @@
-from multiprocessing import Event
 import os
 import unittest
 import sqlite3
 
 from unittest.mock import patch
 
-from more_itertools import side_effect
+from pylogs.modules.helpers.pylogs_setup import PylogsSetup
+from pylogs.modules.helpers.printer_model import Printer
+from pylogs.modules.helpers.user_model import User
 
-from pylogs.modules.pylogs_setup import PylogsSetup
 from pylogs.modules.processors.db_processor import DbProcessor
 from pylogs.modules.processors.auth_processor import AuthProcessor
 from pylogs.modules.processors.event_processor import EventProcessor
 from pylogs.modules.processors.exception_processor import ExceptionProcessor
-from pylogs.modules.printer_model import Printer
-from pylogs.modules.user_model import User
 
 """
 Mocking the setup of processes for tests.
@@ -318,8 +316,6 @@ class TestAuthProcessor(unittest.TestCase):
 
         for _ in decrypted_log:
             self.assertIsInstance(_, str)
-
-
 
 
 class TestEventProcessor(unittest.TestCase):
