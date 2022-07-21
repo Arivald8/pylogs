@@ -17,11 +17,7 @@ class AuthProcessor:
             return os.urandom(32)
         elif iv is not None:
             return os.urandom(16)
-        elif key is not None and iv is not None:
-            # Invalid arguments passed to this method
-            return None
         else:
-            # Unknown cause of malfunction
             return None
 
     
