@@ -59,7 +59,7 @@ messages = {
     "invalid_selection":
     """
     Invalid selection.
-    """
+    """,
 
     "invalid_search_type":
     """
@@ -100,7 +100,7 @@ messages = {
     "username_exists":
     """
     Username already exists. Try again.
-    """
+    """,
 
     "log_exception": """
     =============================================

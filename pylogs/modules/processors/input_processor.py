@@ -4,7 +4,7 @@ class InputProcessor:
     Initialized with an empty command, updates 
     depending on user input.
     """
-    def __init__(self, exception_processor, event=None, commands=None):
+    def __init__(self, exception_processor=None, event=None, commands=None):
         self.event = event
         self.commands = commands
         self.exception_processor = exception_processor

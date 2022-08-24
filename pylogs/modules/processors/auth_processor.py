@@ -1,7 +1,6 @@
 from getpass import getpass
 from hashlib import blake2b
 from hmac import compare_digest
-from logging import exception
 import os
 
 from modules.helpers.printer_model import Printer
@@ -79,6 +78,23 @@ class AuthProcessor:
             else:
                 self.password = password
                 return password
+
+
+    def get_username(self, db_process, registered: bool) -> str:
+        attempts = 3
+        while attempts >= 1:
+            username = input("Username: ")
+            if db_process.check_if_user_exists(
+                db_process.connect(),
+                username
+            ):
+                if not registered:
+                    self.printer.message("username_exists")
+                    attempts -= 1
+                elif registered:
+                    return username
+        self.printer.message("too_many_attempts")
+        exit()
 
 
     def login(self, user_obj, password) -> bool:

@@ -10,6 +10,7 @@ from modules.processors.db_processor import DbProcessor
 from modules.processors.auth_processor import AuthProcessor
 from modules.processors.exception_processor import ExceptionProcessor
 
+
 class Menu:
     def __init__(
         self,
@@ -45,7 +46,50 @@ class Menu:
         Checks which function was called by the user
         and controls the flow of execution.
         """
-        pass
+        if fn_call[0] == "view_event":
+            events = self.db_process.fetch_event(
+                self.db_process.connect(),
+                self.user.username
+            )
+
+            decrypted_events = self.auth_process.decrypt_log(
+                self.user.secret_key,
+                self.user.secret_iv,
+                events
+            )
+
+            search_criteria = self.event_process.view_event()
+
+            if search_criteria[1] == "event_all":
+                self.printer.event(decrypted_events)
+            else:
+                events_found = self.db_process.search_events(
+                    decrypted_events,
+                    search_criteria[2]
+                )
+                self.printer.event(events_found)
+
+        elif fn_call == "record_event":
+            try:
+                timestamp = [
+                    self.event_process.event_date,
+                    self.event_process.event_time
+                ]
+                log_hash = self.auth_process.encrypt_log(
+                    self.user.secret_key,
+                    self.user.secret_iv,
+                    self.event_process()[2:-1:]
+                )
+                ready_event = timestamp + log_hash + [self.user.username]
+
+                self.db_process.add_event(
+                    self.db_process.connect(),
+                    ready_event
+                )
+                self.printer.message("event_saved")
+            except Exception as record_event_error:
+                self.exception_process.log_error(record_event_error)
+
 
     def login_or_register(self):
         valid_options = ["login", "register"]
@@ -64,33 +108,23 @@ class Menu:
         registered = False
         selection = self.login_or_register()
         if selection == "register":
-            attempts = 3
-            while attempts >= 1:
-                username = input("Username: ")
-                if self.db_process.check_if_user_exists(
-                    self.db_process.connect(),
-                    username
-                ):
-                    self.printer.message("username_exists")
-                    attempts -= 1
-                else:
-                    self.user.username = username
-                    self.user.secret_key = self.auth_process.generate_secret(key=True)
-                    self.user.secret_iv = self.auth_process.generate_secret(iv=True)
+            self.user.username = self.auth_process.get_username(self.db_process, False)
+            self.user.secret_key = self.auth_process.generate_secret(key=True)
+            self.user.secret_iv = self.auth_process.generate_secret(iv=True)
 
-                    self.user.pass_hash = self.auth_process.hexdigestizer(
-                        data = self.auth_process.get_password(),
-                        secret_key = self.user.secret_key
-                    )
+            self.user.pass_hash = self.auth_process.hexdigestizer(
+                data = self.auth_process.get_password(),
+                secret_key = self.user.secret_key
+            )
 
-                    self.db_process.create_user(self.db_process.connect(), self.user)
-
-                    registered = True
+            self.db_process.create_user(self.db_process.connect(), self.user)
+            registered = True
 
         elif selection == "login":
             registered = True
 
         if registered is True:
+            username = self.auth_process.get_username(self.db_process, True)
             db_user_obj = self.db_process.get_user_object(
                 self.db_process.connect(),
                 username
