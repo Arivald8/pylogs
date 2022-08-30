@@ -9,7 +9,7 @@ class ExceptionProcessor:
 
     prt: pylogs.modules.printer_model.Printer
     """
-    def __init__(self, prt):
+    def __init__(self, prt=None):
         self.prt = prt
 
 

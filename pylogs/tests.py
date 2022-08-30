@@ -1,14 +1,17 @@
-from ctypes import sizeof
 import os
 import unittest
 import sqlite3
 
-from pylogs.modules.pylogs_setup import PylogsSetup
+from unittest.mock import patch
+
+from pylogs.modules.helpers.pylogs_setup import PylogsSetup
+from pylogs.modules.helpers.printer_model import Printer
+from pylogs.modules.helpers.user_model import User
+
 from pylogs.modules.processors.db_processor import DbProcessor
 from pylogs.modules.processors.auth_processor import AuthProcessor
+from pylogs.modules.processors.event_processor import EventProcessor
 from pylogs.modules.processors.exception_processor import ExceptionProcessor
-from pylogs.modules.printer_model import Printer
-from pylogs.modules.user_model import User
 
 """
 Mocking the setup of processes for tests.
@@ -313,3 +316,84 @@ class TestAuthProcessor(unittest.TestCase):
 
         for _ in decrypted_log:
             self.assertIsInstance(_, str)
+
+
+class TestEventProcessor(unittest.TestCase):
+    @patch(
+        'builtins.input', side_effect=[
+            "this_is_not_in_event_types", 
+        ]
+    )
+    def test_record_event_method_fail(self, _):         
+        bad_event_process = EventProcessor()
+        self.assertFalse(bad_event_process.record_event())
+
+
+    @patch(
+        'builtins.input', side_effect=[
+            "-ui", 
+            "test_title",
+            "test_user",
+            "test_staff",
+            "test_notes"
+        ]
+    )
+    def test_record_event_method_pass(self, _):
+        good_event_process = EventProcessor()
+        self.assertEqual(
+            good_event_process.record_event(),
+            "record_event"
+        )
+
+
+    @patch(
+        'builtins.input', side_effect=[
+            'invalid_search_type'
+        ]
+    )
+    def test_view_event_method_invalid_event_selection(self, _):
+        invalid_event_process = EventProcessor()
+        self.assertTupleEqual(
+            invalid_event_process.view_event(),
+            (
+                'view_event',
+                None,
+                None
+            )
+        )
+
+
+    @patch(
+        'builtins.input', side_effect=[
+            '-all'
+        ]
+    )
+    def test_view_event_method_all_events(self, _):
+        all_event_process = EventProcessor()
+        self.assertTupleEqual(
+            all_event_process.view_event(),
+            (
+                'view_event',
+                'event_all',
+                ''
+            )   
+        )
+
+    
+    @patch(
+        'builtins.input', side_effect=[
+            '-d',
+            'search_key',
+        ]
+    )
+    def test_view_event_method_keyword_event(self, _):
+        keyword_event_process = EventProcessor()
+        self.assertTupleEqual(
+            keyword_event_process.view_event(),
+            (
+                'view_event',
+                'date',
+                'search_key'
+            )
+        )
+    
