@@ -123,7 +123,8 @@ class Menu:
         elif selection == "login":
             registered = True
 
-        if registered is True:
+        if registered:
+            print("Welcome! Please sign in.")
             username = self.auth_process.get_username(self.db_process, True)
             db_user_obj = self.db_process.get_user_object(
                 self.db_process.connect(),

@@ -80,11 +80,15 @@ class DbProcessor:
 
     def check_if_user_exists(self, con_obj, username) -> bool:
         try:
-            return False if con_obj.cursor().execute(
+            res = con_obj.cursor().execute(
                 self.prt.sql_statement(
-                    self.check_if_user_exists.__name__), 
+                    self.check_if_user_exists.__name__),
                     (username,)
-            ).fetchone() is None else True
+                )
+            data = res.fetchone()
+            return False if data is None else True
+            
+            
         except Exception as user_check_error:
             self.exception_process.log_error(user_check_error)
 

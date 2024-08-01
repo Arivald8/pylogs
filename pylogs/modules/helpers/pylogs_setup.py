@@ -5,7 +5,7 @@ class PylogsSetup:
     def __init__(
         self,
         db_name="pylogs.db",
-        db_path="pylogs/",
+        db_path="",
         db_users_table="users",
         db_events_table="events",
         user="user",

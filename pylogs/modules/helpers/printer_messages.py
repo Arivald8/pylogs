@@ -1,5 +1,5 @@
 messages = {
-    "startup_message": """
+    "startup_message": r"""
                          /$$                    
                         | $$                    
       /$$$$$$  /$$   /$$| $$  /$$$$$$   /$$$$$$ 
@@ -100,6 +100,11 @@ messages = {
     "username_exists":
     """
     Username already exists. Try again.
+    """,
+
+    "username_not_found":
+    """
+    Username not found.
     """,
 
     "log_exception": """

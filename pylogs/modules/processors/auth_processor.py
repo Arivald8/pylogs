@@ -26,19 +26,25 @@ class AuthProcessor:
 
     
     def generate_secret(self, key:bool=None, iv:bool=None):
-        if key is not None:
+        if key:
             return os.urandom(32)
-        elif iv is not None:
+        if iv:
             return os.urandom(16)
         else:
             return None
 
     
     def hexdigestizer(self, data, secret_key) -> str:
+        if isinstance(data, str):
+            data = data.encode()
+
+        if not isinstance(secret_key, (bytes, bytearray)):
+            raise TypeError("secret_key must be a bytes-like object")
+        
         return blake2b(
-            f'{data}'.encode(),
+            data,
             digest_size=16,
-            key=f'{secret_key}'.encode()
+            key=secret_key
         ).hexdigest()
     
 
@@ -80,7 +86,7 @@ class AuthProcessor:
                 return password
 
 
-    def get_username(self, db_process, registered: bool) -> str:
+    def get_username(self, db_process, logging_in: bool) -> str:
         attempts = 3
         while attempts >= 1:
             username = input("Username: ")
@@ -88,10 +94,18 @@ class AuthProcessor:
                 db_process.connect(),
                 username
             ):
-                if not registered:
+                if logging_in:
+                    return username
+                else:
+                    # Trying to register user which already exists
                     self.printer.message("username_exists")
                     attempts -= 1
-                elif registered:
+            else:
+                if logging_in:
+                    self.printer.message("username_not_found")
+                    attempts -= 1
+                else:
+                    # User registartion
                     return username
         self.printer.message("too_many_attempts")
         exit()
