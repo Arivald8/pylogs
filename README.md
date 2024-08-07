@@ -15,11 +15,6 @@ A CLI logging tool - Event and data logger.
 ```
 ___
 
-## DISCLAIMER:
-
-Pylog is currently being refactored and re-written with OOP. Pylog is not currently functional.
-___
-
 ## Usage
 
 You will be prompted to either login or register a user:
